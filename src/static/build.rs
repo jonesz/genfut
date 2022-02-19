@@ -2,7 +2,7 @@ extern crate cc;
 
 fn main() {
     // Sequential C support
-    #[cfg(feature = "sequential_c")]
+    #[cfg(any(feature = "sequential_c", feature = "multicore"))]
     cc::Build::new()
         .file("./lib/a.c")
         .flag("-fPIC")
